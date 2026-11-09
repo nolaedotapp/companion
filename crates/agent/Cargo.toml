@@ -22,7 +22,7 @@ tempfile = "3"
 zipsign-api = { version = "=0.2.2", default-features = false, features = ["verify-zip"] }
 
 [dev-dependencies]
-sha2 = "0.10"
+sha2 = "0.11"
 zipsign-api = { version = "=0.2.2", default-features = false, features = ["sign-zip"] }
 
 [target.'cfg(windows)'.dependencies]
