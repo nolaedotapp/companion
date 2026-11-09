@@ -166,7 +166,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          gh release create $env:GITHUB_REF_NAME --verify-tag --draft --generate-notes --title "Nolae Companion v$env:APP_VERSION" "dist/nolae-companion-v${env:APP_VERSION}-x86_64-pc-windows-msvc.zip" dist/nolae-companion-setup.exe dist/companion-updates.zip dist/SHA256SUMS
+          $notes = Join-Path $env:RUNNER_TEMP 'companion-release-notes.md'
+          $download = "https://github.com/$env:GH_REPO/releases/download/$env:GITHUB_REF_NAME/nolae-companion-setup.exe"
+          "## [Download for Windows]($download)`n`nWindows 10/11 · 64-bit · Spotify desktop`n`n[Setup and help](https://docs.nolae.app/companion)`n`nCompanion downloads the updater files automatically when you choose Update. For a new installation, download the Windows installer above." | Set-Content $notes -Encoding utf8
+          gh release create $env:GITHUB_REF_NAME --verify-tag --draft --generate-notes --notes-file $notes --title "Nolae Companion v$env:APP_VERSION" "dist/nolae-companion-v${env:APP_VERSION}-x86_64-pc-windows-msvc.zip#Automatic updater package" 'dist/nolae-companion-setup.exe#Download for Windows' 'dist/companion-updates.zip#Automatic updater release history' 'dist/SHA256SUMS#Download checksums'
           if ($LASTEXITCODE -ne 0) { throw 'Release upload failed' }
           gh release edit $env:GITHUB_REF_NAME --draft=false --latest
           if ($LASTEXITCODE -ne 0) { throw 'Release publish failed' }
