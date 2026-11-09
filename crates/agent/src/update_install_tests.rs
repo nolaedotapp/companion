@@ -29,7 +29,10 @@ impl Server {
         let mut entries: Vec<(&str, &[u8])> = complete();
         entries[0] = (CORE, &core);
         let archive = sign(package(&entries), FIXTURE_KEY, &name);
-        let hash = format!("{:x}", Sha256::digest(&archive));
+        let hash: String = Sha256::digest(&archive)
+            .iter()
+            .map(|byte| format!("{byte:02x}"))
+            .collect();
         let sums = format!("{hash}  {name}\n").into_bytes();
         let release = serde_json::to_vec(&serde_json::json!({
             "tag_name": format!("v{version}"),
