@@ -6,6 +6,9 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: windows-future
+        versions: [">=0.100.0"]
     groups:
       cargo-minor-and-patch:
         patterns: ["*"]
