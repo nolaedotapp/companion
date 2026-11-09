@@ -10,6 +10,8 @@
 
 <p align="center">
   <a href="https://github.com/nolaedotapp/companion/releases/latest/download/nolae-companion-setup.exe"><strong>Download for Windows</strong></a>
+  <br>
+  <sub><a href="https://github.com/nolaedotapp/companion/tree/main">View source on GitHub</a></sub>
 </p>
 
 <p align="center">
