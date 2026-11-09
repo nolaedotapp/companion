@@ -1,0 +1,31 @@
+[package]
+name = "nolae-agent"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+nolae-core = { path = "../core" }
+nolae-windows-playback = { path = "../windows-playback" }
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+reqwest = { version = "0.13", default-features = false, features = ["blocking", "json", "rustls"] }
+directories = "6"
+semver = { version = "1", features = ["serde"] }
+self_update = { version = "1.3.3", default-features = false, features = ["reqwest", "rustls", "github", "archive-zip", "compression-zip-deflate", "signatures", "checksums"] }
+zip = { version = "9.4.2", default-features = false, features = ["deflate-flate2"] }
+tempfile = "3"
+zipsign-api = { version = "=0.2.2", default-features = false, features = ["verify-zip"] }
+
+[dev-dependencies]
+sha2 = "0.10"
+zipsign-api = { version = "=0.2.2", default-features = false, features = ["sign-zip"] }
+
+[target.'cfg(windows)'.dependencies]
+keyring = { version = "3.6.3", features = ["windows-native"] }
+winreg = "0.56"
+windows-sys = { version = "0.61", features = ["Win32_Storage_FileSystem"] }

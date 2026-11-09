@@ -1,0 +1,5 @@
+* text=auto
+release/publisher.pub binary
+assets/*.png binary
+assets/*.ico binary
+assets/fonts/*.ttf binary

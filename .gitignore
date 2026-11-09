@@ -1,0 +1,8 @@
+/target/
+/.cache/
+/.env
+*.key
+*.pem
+*.pfx
+*.log
+/dist/

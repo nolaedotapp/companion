@@ -1,0 +1,22 @@
+pub const BACKGROUND: u32 = 0x0b0b0c;
+pub const FOREGROUND: u32 = 0xf2f2f3;
+pub const SURFACE_1: u32 = 0x18181b;
+pub const SURFACE_2: u32 = 0x232327;
+pub const SURFACE_HOVER: u32 = 0x2e2e33;
+pub const BORDER: u32 = 0x26262b;
+pub const SECONDARY_TEXT: u32 = 0xc2c2c8;
+pub const MUTED_TEXT: u32 = 0x8e8e98;
+pub const PRIMARY: u32 = 0xffd23f;
+pub const PRIMARY_HOVER: u32 = 0xffdc66;
+pub const PRIMARY_PRESSED: u32 = 0xf7c21f;
+pub const ON_PRIMARY: u32 = 0x2a2000;
+pub const SUCCESS: u32 = 0x7fd282;
+pub const INFO: u32 = 0x93bdff;
+pub const WARNING: u32 = 0xff9a7f;
+pub const DANGER_HOVER: u32 = 0x3a1f1b;
+
+pub const WIDTH: f32 = 360.;
+pub const INITIAL_HEIGHT: f32 = 214.;
+pub const MAX_HEIGHT: f32 = 640.;
+pub const LOGO_WIDTH: f32 = 78.;
+pub const LOGO_HEIGHT: f32 = 21.04;

@@ -1,0 +1,5 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Nolae dependency licenses</title>
+<h1>Third-party licenses</h1>
+<p>Unmodified registry dependency sources are available from crates.io at the package names and versions below. Exact versions and checksums are recorded in Cargo.lock in the source repository.</p>
+{{#each licenses}}<h2>{{name}}</h2><p>Used by: {{#each used_by}}{{crate.name}} {{crate.version}}; {{/each}}</p><pre>{{text}}</pre>{{/each}}
+</html>
